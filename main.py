@@ -29,6 +29,35 @@ def main():
                 break        
         about = input("Enter a brief description about yourselves: ")
         atag.string.replace_with(about)
+
+        link = input("Enter your linkedn link : ")
+        for a in inst.find_all('a'):
+            if a['class'][0] == 'about__social-icon1':
+                atag = a
+                break 
+        atag['href'] = link
+
+        git = input("Enter your github link : ")
+        for a in inst.find_all('a'):
+            if a['class'][0] == 'about__social-icon':
+                atag = a
+                break 
+        atag['href'] = git
+
+        email = input("Enter your professional use email: ")
+        for a in inst.find_all('span'):
+            if a['class'][0] == 'contact__text1':
+                atag = a
+                break 
+        atag.string.replace_with(email)
+
+        num = input("Enter your professional use phone number: ")
+        for a in inst.find_all('span'):
+            if a['class'][0] == 'contact__text2':
+                atag = a
+                break 
+        atag.string.replace_with(num)
+
         f1.close()
         
     with open("portfolio/index.html", "w") as f2:
