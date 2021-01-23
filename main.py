@@ -58,6 +58,23 @@ def main():
                 break 
         atag.string.replace_with(num)
 
+        a = input("Would you like to showcase your projects ? ")
+        if a == 'yes':
+            link = input("Enter your project's github repository link : ")
+            for a in inst.find_all('a'):
+                if a['class'][0] == 'portfolio__link-name1':
+                    atag = a
+                    break 
+            atag['href'] = link
+            b = input("Would you like to showcase another projects ? ")
+            if b == 'yes':
+                link = input("Enter your project's github repository link : ")
+                for a in inst.find_all('a'):
+                    if a['class'][0] == 'portfolio__link-name2':
+                        atag = a
+                        break 
+                atag['href'] = link
+
         f1.close()
         
     with open("portfolio/index.html", "w") as f2:
