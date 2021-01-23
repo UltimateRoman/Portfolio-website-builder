@@ -57,6 +57,13 @@ def main():
                 atag = a
                 break 
         atag.string.replace_with(num)
+        
+        con = input("Enter your country : ")
+        for a in inst.find_all('span'):
+            if a['class'][0] == 'contact__text3':
+                atag = a
+                break 
+        atag.string.replace_with(con)
 
         a = input("Would you like to showcase your projects ? ")
         if a == 'yes':
@@ -74,6 +81,14 @@ def main():
                         atag = a
                         break 
                 atag['href'] = link
+                c = input("Would you like to showcase another projects ? ")
+                if c == 'yes':
+                    link = input("Enter your project's github repository link : ")
+                    for a in inst.find_all('a'):
+                        if a['class'][0] == 'portfolio__link-name':
+                            atag = a
+                            break 
+                    atag['href'] = link
 
         f1.close()
         
