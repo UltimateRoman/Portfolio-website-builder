@@ -1,10 +1,10 @@
 # Portfolio-website-builder
 
-A Python tool to generate your custom portfolio website with ease.
+A Python Application to effortlessly generate custom portfolio websites.
 
 <br/>
 
-## Steps to run the tool
+## Steps to run the App
 
 ```
 $ pip install BeautifulSoup4

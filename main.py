@@ -84,27 +84,33 @@ def main():
 
         a = input("\nWould you like to showcase some of your projects ? ")
         if a == 'yes':
+            pname = input("Project name: ")
             link = input("Enter project1's link : ")
             for a in inst.find_all('a'):
                 if a['class'][0] == 'portfolio__link-name1':
                     atag = a
                     break 
+            atag.string.replace_with(pname)
             atag['href'] = link
-            b = input("Would you like to showcase another projects ? ")
+            b = input("Would you like to showcase another project ? ")
             if b == 'yes':
+                pname = input("Project name: ")
                 link = input("Enter project2's link : ")
                 for a in inst.find_all('a'):
                     if a['class'][0] == 'portfolio__link-name2':
                         atag = a
-                        break 
+                        break
+                atag.string.replace_with(pname) 
                 atag['href'] = link
                 c = input("Would you like to showcase one more project ? ")
                 if c == 'yes':
+                    pname = input("Project name: ")
                     link = input("Enter project3's link : ")
                     for a in inst.find_all('a'):
                         if a['class'][0] == 'portfolio__link-name':
                             atag = a
-                            break 
+                            break
+                    atag.string.replace_with(pname) 
                     atag['href'] = link
 
         f1.close()
