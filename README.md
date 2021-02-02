@@ -7,8 +7,8 @@ A Python Application to effortlessly generate custom portfolio websites.
 ## Steps to run the App
 
 ```
-$ pip install BeautifulSoup4
 $ git clone https://github.com/UltimateRoman/Portfolio-website-builder
 $ cd Portfolio-website-builder
+$ pip install BeautifulSoup4
 $ python main.py
 ```
